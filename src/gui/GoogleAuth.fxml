@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" styleClass="signUp__container" stylesheets="@../../assets/style/nabilStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GoogleAuthController">
+   <left>
+      <AnchorPane fx:id="left" prefHeight="700.0" prefWidth="652.0" styleClass="left" stylesheets="@../../assets/style/nabilStyle.css" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="700.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="189.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30px;" styleClass="signUp__title" text="Google authentification" />
+            <Text layoutX="138.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px;" styleClass="signUp__title" text="please complete the sign in process in your browser" />
+            <HBox layoutX="288.0" layoutY="328.0" prefHeight="34.0" style="-fx-spacing: 5px;">
+               <children>
+                  <Label prefHeight="34.0" styleClass="form__member" stylesheets="@../../assets/style/nabilStyle.css" text="Back to login">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Label>
+                  <Hyperlink fx:id="logInLink" onAction="#toLogin" prefHeight="34.0" styleClass="form__member__link" stylesheets="@../../assets/style/nabilStyle.css" text="LogIn!" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

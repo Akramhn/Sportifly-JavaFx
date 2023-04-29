@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ListActController">
+   <children>
+      <Label fx:id="titre" prefHeight="17.0" prefWidth="76.0" text="Titre" />
+      <Label fx:id="categ" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="76.0" text="Categorie" />
+      <Label fx:id="deb" prefHeight="17.0" prefWidth="139.0" text="Date_debut" />
+      <Label fx:id="fin" prefHeight="17.0" prefWidth="131.0" text="Date_fin" />
+      <Button fx:id="edit" mnemonicParsing="false" onAction="#edit" prefHeight="22.0" prefWidth="100.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" text="Edit" textFill="WHITE" />
+      <Button fx:id="delet" layoutX="432.0" layoutY="10.0" mnemonicParsing="false" onAction="#delet" prefHeight="22.0" prefWidth="100.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" text="Delete" textFill="WHITE" />
+      <Button fx:id="pdf" mnemonicParsing="false" onAction="#pdf" prefHeight="22.0" prefWidth="100.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" text="PDF" textFill="WHITE" />
+   </children>
+</HBox>

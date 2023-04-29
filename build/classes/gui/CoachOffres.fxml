@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1286.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CoachOffresController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="white-background" stylesheets="@../css/coachoffre.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/326509292_583579569889499_1026071494957871058_n.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="80.0" />
+               </HBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="290.0" style="-fx-border-radius: 20;" styleClass="round-layout" stylesheets="@../css/coachoffre.css">
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin>
+               <children>
+                  <TextField prefHeight="25.0" prefWidth="296.0" promptText="Search Offre" styleClass="transparent" stylesheets="@../css/coachoffre.css" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/search.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="3.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Pane prefHeight="60.0" prefWidth="188.0" HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="346.0">
+               <children>
+                  <Button fx:id="meet" mnemonicParsing="false" onAction="#GotoMeet" prefHeight="36.0" prefWidth="156.0" style="-fx-background-radius: 20; -fx-background-color: #00FF80;" text="Démarrer meet">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="addOffre" mnemonicParsing="false" onAction="#Addoffre" prefHeight="36.0" prefWidth="98.0" style="-fx-background-radius: 20; -fx-background-color: #00FF80;" text="Add Offre">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/gmail.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="510.0" prefWidth="315.0" styleClass="white-background" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER" prefHeight="71.0" prefWidth="315.0" spacing="20.0" style="-fx-background-radius: 10;" styleClass="white-background" stylesheets="@../css/coachoffre.css">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/téléchargé-modified-modified.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label lineSpacing="2.0" prefHeight="20.0" prefWidth="245.0" text="LIONEL MESSI">
+                     <font>
+                        <Font name="Berlin Sans FB" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox prefHeight="264.0" prefWidth="315.0" spacing="5.0" style="-fx-background-radius: 20;" styleClass="white-background" stylesheets="@../css/coachoffre.css">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="315.0" spacing="10.0" stylesheets="@../css/coachoffre.css">
+                     <children>
+                        <Pane prefHeight="51.0" prefWidth="85.0" style="-fx-background-color: #00FF80; -fx-background-radius: 10;" />
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ofrreicon.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: #F3F3F3;" text="Mes offres">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="mouse-moved" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="315.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/coachoffre.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ofrreicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="14.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button fx:id="Mesreservation" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Mesrese" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: white;" text="Reservation">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="315.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/coachoffre.css">
+                     <children>
+                        <Pane prefHeight="50.0" prefWidth="0.0" style="-fx-background-color: #00FF80; -fx-background-radius: 10;" />
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ofrreicon.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="planning" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#gotoPlanning" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: white;" text="Planning">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="315.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/coachoffre.css">
+                     <children>
+                        <Pane prefHeight="50.0" prefWidth="0.0" style="-fx-background-color: #00FF80; -fx-background-radius: 10;" />
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ofrreicon.png" />
+                           </image>
+                        </ImageView>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: white;" text="Calendar">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="addOffre" mnemonicParsing="false" onAction="#Addoffre" prefHeight="39.0" prefWidth="307.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" text="Add Offre">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="831.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+            <ScrollPane styleClass="body-background" stylesheets="@../css/coachoffre.css">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <content>
+                  <VBox fx:id="postsContainer" alignment="TOP_CENTER" prefWidth="729.0" spacing="20.0" stylesheets="@../css/coachoffre.css">
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Pane prefHeight="830.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </center>
+   <right>
+      <VBox prefHeight="830.0" prefWidth="225.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

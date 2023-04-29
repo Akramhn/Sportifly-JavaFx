@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserProfileeController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="768.0" prefWidth="319.0">
+         <children>
+            <ImageView fx:id="imagepro" fitHeight="79.0" fitWidth="188.0" layoutX="14.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="14.0" layoutY="203.0" prefHeight="21.0" prefWidth="140.0" text="Welcome" />
+            <Label fx:id="nameLabel" layoutX="84.0" layoutY="262.0" prefHeight="21.0" prefWidth="111.0" />
+            <Label layoutX="1.0" layoutY="329.0" prefHeight="21.0" prefWidth="59.0" text="Role:" />
+            <Label layoutX="9.0" layoutY="262.0" text="Name:" />
+            <Label layoutX="14.0" layoutY="85.0" style="-fx-font-size: 16pt; -fx-text-fill: white; -fx-background-color: #00FF80; -fx-padding: 5px;" text="photo de profil">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="rolesLabel" layoutX="43.0" layoutY="329.0" prefHeight="21.0" prefWidth="140.0" />
+            <HBox alignment="CENTER" layoutX="9.0" layoutY="402.0" prefHeight="50.0" prefWidth="315.0" spacing="10.0" stylesheets="">
+               <styleClass>
+                  <String fx:value="mouse-moved" />
+                  <String fx:value="selected" />
+               </styleClass>
+               <children>
+                  <Button fx:id="imagenn" mnemonicParsing="false" onAction="#UploadImageActionPerformed" prefHeight="31.0" prefWidth="164.0" style="-fx-background-color: #00FF80;" text="Ajouter une photo" textFill="WHITE" />
+               </children>
+            </HBox>
+            <ImageView fitHeight="55.0" fitWidth="208.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="-4.0" layoutY="448.0" prefHeight="298.0" prefWidth="315.0" spacing="5.0" style="-fx-background-radius: 20;" styleClass="white-background">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="315.0" spacing="10.0" style="-fx-background-color: white;" stylesheets="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/css/coachoffre.css">
+                     <children>
+                        <Pane prefHeight="51.0" prefWidth="85.0" style="-fx-background-color: #00FF80; -fx-background-radius: 10;" />
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/img/ofrreicon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: white;" text="Mes Offres">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="mouse-moved" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="mouse-moved" stylesheets="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/css/coachoffre.css">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/img/istockphoto-1319058954-612x612-removebg-preview.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: white;" text="Mes reservations">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="mouse-moved" stylesheets="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/css/coachoffre.css">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/img/plan.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: white;" text="Planning">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="mouse-moved" stylesheets="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/css/coachoffre.css">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/img/calendar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: white;" text="Calendar">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: white;" styleClass="mouse-moved" stylesheets="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/css/coachoffre.css">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/SPROTFILYJAVAFX-GestionOffre/src/img/prix.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="6.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" style="-fx-background-color: white;" text="Historique">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="313.0" style="-fx-background-color: #00FF80; -fx-background-radius: 20;" text="Modifier profile" />
+               </children>
+            </VBox>
+            <VBox fx:id="afficher" layoutX="-9.0" layoutY="42.0" prefHeight="372.0" prefWidth="287.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="338.0" layoutY="-3.0" prefHeight="762.0" prefWidth="895.0">
+         <children>
+            <AnchorPane layoutX="33.0" layoutY="14.0" prefHeight="293.0" prefWidth="912.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <TextField fx:id="adduser_email" layoutX="115.0" layoutY="85.0" prefHeight="25.0" prefWidth="172.0" styleClass="textfield" />
+                  <TextField fx:id="adduser_nom" layoutX="115.0" layoutY="139.0" prefHeight="25.0" prefWidth="172.0" styleClass="textfield" />
+                  <Label layoutX="25.0" layoutY="89.0" prefHeight="18.0" prefWidth="59.0" text="email:">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="144.0" text="nom:">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="27.0" prefHeight="18.0" prefWidth="140.0" text="Détails Personnels">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addEmployee_updateBtn1" layoutX="576.0" layoutY="236.0" mnemonicParsing="false" onAction="#updateuser" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #00FF80;" styleClass="update-btn" text="Enregistrer les Modifications" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="logout" layoutX="512.0" layoutY="724.0" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="140.0" style="-fx-background-color: #00FF80;" text="logout" textFill="WHITE" />
+            <Button fx:id="Btncoach" layoutX="703.0" layoutY="724.0" mnemonicParsing="false" onAction="#SwitchToCoachList" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: #00FF80;" text="Consulter la liste des coach" textFill="WHITE" />
+         </children>
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </AnchorPane>
+   </children>
+</AnchorPane>

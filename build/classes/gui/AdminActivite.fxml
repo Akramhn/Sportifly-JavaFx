@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="836.0" prefWidth="1177.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AdminActiviteController">
+   <children>
+      <Label layoutX="502.0" layoutY="10.0" prefHeight="21.0" prefWidth="498.0" text="Dashboard Admin">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Pane prefHeight="121.0" prefWidth="963.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="61.0" prefHeight="21.0" prefWidth="202.0" text="My Blog">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <Pane layoutX="-11.0" layoutY="-15.0" prefHeight="848.0" prefWidth="311.0" style="-fx-background-color: #2a2185; -fx-background-radius: 0 90 0 0;">
+         <children>
+            <VBox layoutX="77.0" layoutY="108.0" prefHeight="644.0" prefWidth="200.0" spacing="60.0">
+               <children>
+                  <Button fx:id="stat" mnemonicParsing="false" onAction="#gotostat" prefHeight="31.0" prefWidth="282.0" style="-fx-background-color: transparent;" styleClass="MenuButton" text="Gestion des utilisateurs" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="326.0" style="-fx-background-color: transparent;" styleClass="MenuButton" text="Reclamations" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: transparent;" styleClass="MenuButton" text="Planning" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="350.0" style="-fx-background-color: transparent;" styleClass="MenuButton" text="offres" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="304.0" style="-fx-background-color: transparent;" styleClass="MenuButton" text="evenements" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="dashcateg" mnemonicParsing="false" onAction="#GoTodashcateg" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="buttonFront" text="Categorie" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="21.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Sign out" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <ImageView fitHeight="55.0" fitWidth="184.0" layoutX="21.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="52.0" layoutX="6.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="24.0" fitWidth="34.0" layoutX="45.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@planification.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="39.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@offrir.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="52.0" layoutX="39.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@blog.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="24.0" layoutX="33.0" layoutY="692.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logout.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="39.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@fete.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="45.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2187.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="27.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@silhouette-dutilisateurs-multiples.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="Recherche_User" layoutX="434.0" layoutY="61.0" prefHeight="34.0" prefWidth="641.0" promptText="Search" />
+      <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="395.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@search.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="52.0" layoutX="1075.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane layoutX="330.0" layoutY="153.0" prefHeight="431.0" prefWidth="592.0">
+         <children>
+            <TableView fx:id="Vactivite" prefHeight="252.0" prefWidth="593.0">
+               <columns>
+                  <TableColumn fx:id="Vtitre" prefWidth="76.0" text="titre" />
+                  <TableColumn fx:id="Vref_categ" prefWidth="47.0" text="ref_categ" />
+                  <TableColumn fx:id="Vid_user" prefWidth="55.0" text="id_user" />
+                  <TableColumn fx:id="Vdate_deb" prefWidth="98.0" text="date debut" />
+                  <TableColumn fx:id="Vdate_fin" minWidth="0.0" prefWidth="98.0" text="date fin" />
+                  <TableColumn fx:id="delete" prefWidth="72.0" text="delete" />
+                  <TableColumn fx:id="edit" prefWidth="72.0" text="edite" />
+                  <TableColumn fx:id="pdf" prefWidth="72.0" text="pdf" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="add_activite" layoutX="765.0" layoutY="110.0" mnemonicParsing="false" onAction="#GoToAddActivite" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #2a2185; -fx-background-radius: 20;" text="Ajouter Activite" textFill="WHITE" />
+      <Button fx:id="qrcode" layoutX="359.0" layoutY="110.0" mnemonicParsing="false" onAction="#qrcode" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #2a2185; -fx-background-radius: 20;" text="Generate QrCode" textFill="WHITE" />
+   </children>
+</AnchorPane>

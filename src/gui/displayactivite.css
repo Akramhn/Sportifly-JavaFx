@@ -1,0 +1,9 @@
+/*
+ * Empty Stylesheet file.
+ */
+.table-view .column-header-background {
+    -fx-background-color: green;
+}
+.mainFxmlClass {
+
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CaptchaController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="600.0" prefWidth="341.0" style="-fx-background-color: #b0f2b6;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="79.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@recaptcha.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Label layoutX="438.0" layoutY="38.0" text="please solve this captcha" />
+      <Button fx:id="submit" layoutX="446.0" layoutY="362.0" mnemonicParsing="false" onAction="#submit" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #b0f2b6; -fx-border-radius: 200; -fx-border-color: #b0f2b6; -fx-background-radius: 200; -fx-text-fill: white;" text="SUBMIT" />
+      <Button fx:id="reset" layoutX="615.0" layoutY="197.0" mnemonicParsing="false" onAction="#reseting" prefHeight="33.0" prefWidth="88.0" style="-fx-background-color: #b0f2b6; -fx-border-radius: 200; -fx-border-color: #b0f2b6; -fx-background-radius: 200; -fx-text-fill: white;" text="RESET" />
+      <ImageView fx:id="cap" fitHeight="150.0" fitWidth="200.0" layoutX="402.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="code" layoutX="415.0" layoutY="269.0" promptText="enter the code" />
+      <Button fx:id="submitcoach" layoutX="448.0" layoutY="416.0" mnemonicParsing="false" onAction="#submitcoach" prefHeight="31.0" prefWidth="187.0" style="-fx-border-color: #b0f2b6; -fx-background-color: #b0f2b6; -fx-border-radius: 200; -fx-background-radius: 200;" text="SUBMIT" textFill="WHITE" />
+   </children>
+</AnchorPane>
