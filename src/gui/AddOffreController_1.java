@@ -77,8 +77,21 @@ public class AddOffreController_1 implements Initializable {
     private Button btnRetourA;
     @FXML
     private Button MesressA;
-        private SessionManager session;
-
+    private SessionManager session;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button part;
+    @FXML
+    private Button evente;
 
     public TextField getTfDesc() {
         return tfDesc;
@@ -226,29 +239,26 @@ public class AddOffreController_1 implements Initializable {
         }
     }
 
-    @FXML
-    private void MesOffresA(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListOffreBack.fxml"));
-
-            Parent root = loader.load();
-            MesOffA.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void MesreseA(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListOffreBack.fxml"));
-
-            Parent root = loader.load();
-            MesreservationA.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
+//    private void MesOffresA(ActionEvent event) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListOffreBack.fxml"));
+//
+//            Parent root = loader.load();
+//            MesOffA.getScene().setRoot(root);
+//        } catch (IOException ex) {
+//            Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//    private void MesreseA(ActionEvent event) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListOffreBack.fxml"));
+//
+//            Parent root = loader.load();
+//            MesreservationA.getScene().setRoot(root);
+//        } catch (IOException ex) {
+//            Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
     @FXML
     private void RetourHandleButtonA(ActionEvent event) {
         try {
@@ -261,9 +271,81 @@ public class AddOffreController_1 implements Initializable {
         }
     }
 
-
     @FXML
-    private void Mesress(ActionEvent event) {
+    private void handleClicks(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton.getId().equals("MesOffA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOffreBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesOffA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("utilisateur")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) utilisateur.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("plan")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminActivite.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) plan.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("cat")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admi_categ.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) cat.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("act")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Act.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) act.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("comm")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Com.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) comm.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("MesressA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListResBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesressA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("evente")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+             else if (clickedButton.getId().equals("part")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
 }

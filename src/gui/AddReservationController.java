@@ -71,14 +71,13 @@ public class AddReservationController implements Initializable {
 
     private String lien;
     private File file;
+    @FXML
     private Button MesOffA;
     private Button MesreservationA;
     @FXML
     private VBox postsContainer;
     @FXML
     private Button btnRetourA;
-    @FXML
-    private Button mesoff;
     @FXML
     private Button MesressA;
     @FXML
@@ -87,6 +86,20 @@ public class AddReservationController implements Initializable {
     private ComboBox<String> UserList;
     @FXML
     private Button btn_ajoutres;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button evente;
+    @FXML
+    private Button part;
 
     public TextField getTfDesc() {
         return tfDesc;
@@ -229,13 +242,6 @@ public class AddReservationController implements Initializable {
         }
     }
 
-    @FXML
-    private void MesOffr(ActionEvent event) {
-    }
-
-    @FXML
-    private void Mesress(ActionEvent event) {
-    }
 
     @FXML
     private void Ajoutres(ActionEvent event) {
@@ -282,6 +288,83 @@ public class AddReservationController implements Initializable {
 
         } catch (SQLException ex) {
             Logger.getLogger(ListOffreUserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+     private void handleClicks(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton.getId().equals("MesOffA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOffreBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesOffA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("utilisateur")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) utilisateur.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("plan")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminActivite.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) plan.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("cat")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admi_categ.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) cat.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("act")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Act.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) act.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("comm")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Com.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) comm.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("MesressA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListResBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesressA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("evente")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+             else if (clickedButton.getId().equals("part")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
         }
     }
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="800.0" prefHeight="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ShowAllController">
+    <AnchorPane layoutX="-4.0" layoutY="-9.0" prefHeight="70.0" prefWidth="807.0" style="-fx-background-color: #2a2185;" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="-9.0">
+        <StackPane prefHeight="70.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="70.0" prefWidth="806.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="274.0" style="-fx-border-radius: 20; -fx-background-color: white;" styleClass="round-layout" stylesheets="@../css/coachoffre.css">
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="254.0" promptText="Search Offre" style="-fx-background-color: white; -fx-background-radius: 10;" styleClass="transparent" stylesheets="@../css/coachoffre.css" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="198.0">
+               <padding>
+                  <Insets left="500.0" />
+               </padding>
+               <children>
+                    <Button fx:id="addButton" mnemonicParsing="false" onAction="#ajouterEvent" prefHeight="29.0" prefWidth="116.0" style="-fx-background-color: #2a2185; -fx-background-radius: 10;" styleClass="top-button" text="Ajouter Event" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+               </children>
+            </HBox>
+         </children>
+        </StackPane>
+    </AnchorPane>
+    <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" pannable="true" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <AnchorPane>
+            <VBox fx:id="mainVBox" layoutY="-2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                  <Text fx:id="topText" boundsType="LOGICAL_VERTICAL_CENTER" fill="#222121" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="liste des événements" textAlignment="JUSTIFY" textOrigin="CENTER">
+                      <font>
+                          <Font name="Arial Bold" size="18.0" />
+                      </font>
+                  <VBox.margin>
+                     <Insets left="10.0" top="10.0" />
+                  </VBox.margin>
+                  </Text>
+            </children></VBox>
+        </AnchorPane>
+    </ScrollPane>
+</AnchorPane>

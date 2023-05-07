@@ -25,7 +25,7 @@ public class Home extends Application{
         try {
       //  Parent root =FXMLLoader.load(getClass().getResource("MenuDynamicDevelopers.fxml"));
        // Parent root =FXMLLoader.load(getClass().getResource("Back.fxml"));
-               Parent root =FXMLLoader.load(getClass().getResource("signin.fxml"));
+               Parent root =FXMLLoader.load(getClass().getResource("HomePagewadha7.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("sportifly");
             primaryStage.setTitle("sportifly application");

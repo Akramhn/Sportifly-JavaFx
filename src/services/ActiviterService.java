@@ -59,15 +59,15 @@ public class ActiviterService implements IService<Activiter> {
 
     
     public void modifier(Activiter t) throws SQLException {
-        String req = "update activiter set ref_categ_id = ?, id_user_id = ?, titre = ?, date_debut = ?, date_fin = ? where id = ?";
+        String req = "update activiter set ref_categ_id = ?,  titre = ?, date_debut = ?, date_fin = ? where id = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
 
        ps.setInt(1, t.getRef_categ());
-        ps.setInt(2, t.getId_user());
-        ps.setString(3, t.getTitre());
-        ps.setTimestamp(4, t.getDate_debut());
-         ps.setTimestamp(5, t.getDate_fin());
-        ps.setInt(6, t.getId());
+    
+        ps.setString(2, t.getTitre());
+        ps.setTimestamp(3, t.getDate_debut());
+         ps.setTimestamp(4, t.getDate_fin());
+        ps.setInt(5, t.getId());
 
         ps.executeUpdate();
 

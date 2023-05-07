@@ -4,47 +4,39 @@
  * and open the template in the editor.
  */
 package util;
+
 import entities.User;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.prefs.Preferences;
+
 /**
  *
  * @author user
  */
 
-
 public final class SessionManager {
- 
+
     private static SessionManager instance;
- 
 
-        private static int id;
+    private static int id;
     private static String email;
-     private static String roles;
+    private static String roles;
     private static String lastname;
-     private static String password;
+    private static String password;
     private User user;
-    
-    
-    
-    
-    
-   
 
-   
-  //SessionManager.getInstace(rs.getInt("id"),rs.getInt("cin"),rs.getString("user_name"),rs.getInt("numero"),rs.getString("email"),rs.getString("adresse"),rs.getString("roles"));
-    private SessionManager(int id , String email , String lastname ,String roles ) {
-    SessionManager.id=id;
-    SessionManager.email=email;
-    SessionManager.lastname=lastname;
-    SessionManager.roles=roles;
+    //SessionManager.getInstace(rs.getInt("id"),rs.getInt("cin"),rs.getString("user_name"),rs.getInt("numero"),rs.getString("email"),rs.getString("adresse"),rs.getString("roles"));
+    private SessionManager(int id, String email, String lastname, String roles) {
+        SessionManager.id = id;
+        SessionManager.email = email;
+        SessionManager.lastname = lastname;
+        SessionManager.roles = roles;
     }
- 
-  
-    public static SessionManager getInstace(int id ,String email , String lastname ,String roles) {
-        if(instance == null) {
-            instance = new SessionManager( id , email ,lastname ,roles);
+
+    public static SessionManager getInstace(int id, String email, String lastname, String roles) {
+        if (instance == null) {
+            instance = new SessionManager(id, email, lastname, roles);
         }
         return instance;
     }
@@ -85,38 +77,36 @@ public final class SessionManager {
         SessionManager.lastname = lastname;
     }
 
- 
-    
-    public static void cleanUserSession() {
-    id=0;
-     email="";
-     lastname="";
-     roles="";
-      password="";
-     
+    public static void setId(int id) {
+        SessionManager.id = id;
     }
- 
+
+    public static void cleanUserSession() {
+        id = 0;
+        email = "";
+        lastname = "";
+        roles = "";
+        password = "";
+
+    }
+
     @Override
     public String toString() {
-        return "UserSession{" +
-                "lastname='" + lastname + '\'' +
-                "email='" + email + '\'' +
-               
-                "id = '" + id + '\'' +
-           
-                ", privileges=" + roles +
-                
-            '}';
+        return "UserSession{"
+                + "lastname='" + lastname + '\''
+                + "email='" + email + '\''
+                + "id = '" + id + '\''
+                + ", privileges=" + roles
+                + '}';
     }
- 
-    
+
     static class cleanUserSession {
- 
+
         public cleanUserSession() {
-        id=0;
-     email="";
-     lastname="";
-     roles="";
+            id = 0;
+            email = "";
+            lastname = "";
+            roles = "";
         }
     }
 
@@ -127,7 +117,8 @@ public final class SessionManager {
     public static void setPassword(String password) {
         SessionManager.password = password;
     }
-      public User getUser() {
+
+    public User getUser() {
         User user = null;
         return user;
     }
@@ -136,7 +127,8 @@ public final class SessionManager {
     public void setUser(User user) {
         this.user = user;
     }
- public static SessionManager getSession() {
+
+    public static SessionManager getSession() {
         SessionManager session = null;
         User user = getInstance().getUser();
         if (user != null) {

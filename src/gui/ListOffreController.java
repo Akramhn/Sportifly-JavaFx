@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 import services.OffreService;
 import services.StarsService;
+import util.SessionManager;
 
 /**
  * FXML Controller class
@@ -56,6 +57,7 @@ public class ListOffreController implements Initializable {
     private OffreService offreService = new OffreService();
 
     private int id;
+    private SessionManager session ;
 
     @FXML
     private VBox Vbox;
@@ -81,15 +83,15 @@ public class ListOffreController implements Initializable {
 
     public void setData(Offre offre) throws SQLException {
 
-        File file = new File("C:\\Users\\wadah\\OneDrive\\Desktop\\pidev\\IntegrationJavaFX\\SPROTFILYJAVAFX-gestionusers\\src" + offre.getAffiche());
+        File file = new File("C:\\Users\\wadah\\OneDrive\\Desktop\\integre\\usersgestion\\public\\uploads\\offre\\" + offre.getAffiche());
         Image image = new Image(file.toURI().toString());
-        System.out.println(image);
+        System.out.println(offre.getAffiche());
         affOffre.setImage(image);
         Prix.setText("prix :" + String.valueOf(offre.getPrix()));
         Desc.setText("Descritpion :" + offre.getDescription());
         setId(offre.getId());
 
-        username.setText("Messi");
+        username.setText(session.getLastname());
         StarsService ss = new StarsService();
         double ratingValue = ss.calculateMoyenne(id);
         rating.setRating(ratingValue);

@@ -74,27 +74,27 @@ public class OffreService implements IServiceOffre<Offre> {
         return test;
 
     }
+
     public List<Offre> recuperer(int id_user) throws SQLException {
-    List<Offre> offres = new ArrayList<>();
-    String req = "SELECT * FROM offre o WHERE NOT EXISTS (SELECT 1 FROM reservation r WHERE r.id_user_id = " + id_user + " AND r.id_offre_id = o.id) order by date DESC";
-    Statement st = cnx.createStatement();
-    ResultSet rs = st.executeQuery(req);
-    while (rs.next()) {
-        Offre o = new Offre();
-        o.setId(rs.getInt("id"));
-        o.setId_user(rs.getInt("id_user_id"));
-        o.setId_categroy(rs.getInt("id_category_id"));
-        o.setDate(rs.getDate("date"));
-        o.setAffiche("/img/" + rs.getString("affiche"));
-        o.setPrix(rs.getFloat("prix"));
-        o.setDescription(rs.getString("description"));
-        o.setNb_place(rs.getInt("nbplace"));
+        List<Offre> offres = new ArrayList<>();
+        String req = "SELECT * FROM offre o WHERE NOT EXISTS (SELECT 1 FROM reservation r WHERE r.id_user_id = " + id_user + " AND r.id_offre_id = o.id) order by date DESC";
+        Statement st = cnx.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Offre o = new Offre();
+            o.setId(rs.getInt("id"));
+            o.setId_user(rs.getInt("id_user_id"));
+            o.setId_categroy(rs.getInt("id_category_id"));
+            o.setDate(rs.getDate("date"));
+            o.setAffiche(rs.getString("affiche"));
+            o.setPrix(rs.getFloat("prix"));
+            o.setDescription(rs.getString("description"));
+            o.setNb_place(rs.getInt("nbplace"));
 
-        offres.add(o);
+            offres.add(o);
+        }
+        return offres;
     }
-    return offres;
-}
-
 
     @Override
     public List<Offre> recuperer() throws SQLException {
@@ -108,7 +108,7 @@ public class OffreService implements IServiceOffre<Offre> {
             o.setId_user(rs.getInt("id_user_id"));
             o.setId_categroy(rs.getInt("id_category_id"));
             o.setDate(rs.getDate("date"));
-            o.setAffiche("/img/" + rs.getString("affiche"));
+            o.setAffiche( rs.getString("affiche"));
             o.setPrix(rs.getFloat("prix"));
             o.setDescription(rs.getString("description"));
             o.setNb_place(rs.getInt("nbplace"));
@@ -164,7 +164,7 @@ public class OffreService implements IServiceOffre<Offre> {
             o.setId_user(rs.getInt("id_user_id"));
             o.setId_categroy(rs.getInt("id_category_id"));
             o.setDate(rs.getDate("date"));
-            o.setAffiche("/img/" + rs.getString("affiche"));
+            o.setAffiche(rs.getString("affiche"));
             o.setPrix(rs.getFloat("prix"));
             o.setDescription(rs.getString("description"));
             o.setNb_place(rs.getInt("nbplace"));
@@ -186,13 +186,12 @@ public class OffreService implements IServiceOffre<Offre> {
         o.setId_user(rs.getInt("id_user_id"));
         o.setId_categroy(rs.getInt("id_category_id"));
         o.setDate(rs.getDate("date"));
-        o.setAffiche("/img/" + rs.getString("affiche"));
+        o.setAffiche( rs.getString("affiche"));
         o.setPrix(rs.getFloat("prix"));
         o.setDescription(rs.getString("description"));
         o.setNb_place(rs.getInt("nbplace"));
 
         return o;
     }
-
 
 }

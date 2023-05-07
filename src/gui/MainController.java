@@ -73,7 +73,7 @@ public class MainController implements Initializable {
     @FXML
     private void EspaceAdmin(ActionEvent event) {
             try {
-                        Parent adminRoot = FXMLLoader.load(getClass().getResource("/gui/ListOffreBack.fxml"));
+                        Parent adminRoot = FXMLLoader.load(getClass().getResource("/gui/AllProducts.fxml"));
                         Scene adminScene = new Scene(adminRoot);
                         Stage adminStage = new Stage();
                         adminStage.setTitle("Admin");

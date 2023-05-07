@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -33,6 +34,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import services.OffreService;
 import util.SessionManager;
 
@@ -69,14 +71,28 @@ public class ListOffreBackController implements Initializable {
     @FXML
     private TableColumn<?, ?> delete;
     OffreService oc = new OffreService();
-    @FXML
     private Button mesO;
-    @FXML
     private Button mesRes;
-    @FXML
     private Button stats;
-        private SessionManager session;
-
+    private SessionManager session;
+    @FXML
+    private Button MesOffA;
+    @FXML
+    private Button MesressA;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button evente;
+    @FXML
+    private Button part;
 
     /**
      * Initializes the controller class.
@@ -196,10 +212,9 @@ public class ListOffreBackController implements Initializable {
 
     }
 
-
     @FXML
     private void ajouterOffre(ActionEvent event) {
-          try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AddOffre_1.fxml"));
 
             Parent root = loader.load();
@@ -209,9 +224,8 @@ public class ListOffreBackController implements Initializable {
         }
     }
 
-    @FXML
     private void mesOffres(ActionEvent event) {
-           try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListOffreBack.fxml"));
 
             Parent root = loader.load();
@@ -221,9 +235,8 @@ public class ListOffreBackController implements Initializable {
         }
     }
 
-    @FXML
     private void mesR(ActionEvent event) {
-           try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ListResBack.fxml"));
 
             Parent root = loader.load();
@@ -233,9 +246,8 @@ public class ListOffreBackController implements Initializable {
         }
     }
 
-    @FXML
     private void StatsFunction(ActionEvent event) {
-              try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/StaticOffreByCat.fxml"));
 
             Parent root = loader.load();
@@ -245,4 +257,80 @@ public class ListOffreBackController implements Initializable {
         }
     }
 
+    @FXML
+    private void handleClicks(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton.getId().equals("MesOffA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOffreBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesOffA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("utilisateur")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) utilisateur.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("plan")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminActivite.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) plan.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("cat")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admi_categ.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) cat.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("act")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Act.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) act.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("comm")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Com.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) comm.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("MesressA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListResBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesressA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("evente")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+             else if (clickedButton.getId().equals("part")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
 }

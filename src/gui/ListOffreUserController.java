@@ -67,8 +67,7 @@ public class ListOffreUserController implements Initializable {
     private int idOffre;
     @FXML
     private Rating rating;
-        private SessionManager session;
-
+    private SessionManager session;
 
     public int getId() {
         return idOffre;
@@ -86,7 +85,7 @@ public class ListOffreUserController implements Initializable {
         Desc.setText("Descritpion :" + offre.getDescription());
         setId(offre.getId());
 
-        username.setText("Messi");
+        username.setText(session.getLastname());
         // Get the rating for the current user and the current offer
         int id_user = session.getId(); // replace this with the actual user ID
         StarsService ss = new StarsService();
@@ -148,11 +147,11 @@ public class ListOffreUserController implements Initializable {
                 reservation r = new reservation(id_user, idOffre, date, "En Cours");
                 ReservationService rs = new ReservationService();
                 rs.ajouter(r);
-                
-           Scene scene = ((Node)event.getSource()).getScene();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("espaceUser.fxml"));
-            Parent root = loader.load();
-            scene.setRoot(root);
+
+                Scene scene = ((Node) event.getSource()).getScene();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("espaceUser.fxml"));
+                Parent root = loader.load();
+                scene.setRoot(root);
             }
 
         } catch (SQLException ex) {

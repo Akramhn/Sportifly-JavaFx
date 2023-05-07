@@ -43,10 +43,13 @@
                   </ImageView>
                </children>
             </HBox>
-            <Pane prefHeight="60.0" prefWidth="188.0" HBox.hgrow="ALWAYS" />
+            <Pane prefHeight="60.0" prefWidth="188.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="profil" layoutX="263.0" layoutY="12.0" mnemonicParsing="false" onAction="#gotoProfil" prefHeight="36.0" prefWidth="84.0" style="-fx-background-radius: 20; -fx-background-color: #00FF80;" text="Pofil" />
+               </children></Pane>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="198.0">
                <children>
-                  <Button fx:id="profil" mnemonicParsing="false" onAction="#gotoProfil" prefHeight="36.0" prefWidth="84.0" style="-fx-background-radius: 20; -fx-background-color: #00FF80;" text="Pofil">
+                  <Button fx:id="logout" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="84.0" style="-fx-background-radius: 20; -fx-background-color: #00FF80;" text="Log out">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -228,6 +231,14 @@
                      <padding>
                         <Insets left="10.0" right="10.0" top="20.0" />
                      </padding>
+                     <children>
+                         
+                        <Button fx:id="home" mnemonicParsing="false" onAction="#GoToHome" style="-fx-background-color: transparent;" text="Back to Home Page" underline="true">
+                           <VBox.margin>
+                              <Insets right="550.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
                   </VBox>
                </content>
             </ScrollPane>

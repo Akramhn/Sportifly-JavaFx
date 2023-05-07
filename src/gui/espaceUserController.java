@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,15 +26,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import services.CategorieService;
 import services.OffreService;
 import util.SessionManager;
-
 
 /**
  * FXML Controller class
@@ -61,12 +65,16 @@ public class espaceUserController implements Initializable {
     private Button triOffre;
 
     private String tri = "tri";
-    
-    private SessionManager session ;
+
+    private SessionManager session;
     @FXML
     private Button planning;
     @FXML
     private Button profil;
+    @FXML
+    private Button logout;
+    @FXML
+    private Button home;
 
     /**
      * Initializes the controller class.
@@ -238,7 +246,7 @@ public class espaceUserController implements Initializable {
             tri = "tri";
             triOffre.setText("Best Offres");
             Offres = new ArrayList<>(offreService.recuperer(session.getId()));
-              postsContainer.getChildren().clear();
+            postsContainer.getChildren().clear();
             for (Offre offre : Offres) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("ListOffreUser.fxml"));
@@ -251,7 +259,6 @@ public class espaceUserController implements Initializable {
                     Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-           
 
         }
 
@@ -259,22 +266,22 @@ public class espaceUserController implements Initializable {
 
     @FXML
     private void gotoPlanning(ActionEvent event) {
-        
-       
-              try {
+
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/templateActivite.fxml"));
-            
+
             Parent root = loader.load();
             planning.getScene().setRoot(root);
         } catch (IOException ex) {
             Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
-        } }
+        }
+    }
 
     @FXML
     private void gotoProfil(ActionEvent event) {
-        
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/UserProfilee.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("UserProfilee.fxml"));
 
             Parent root = loader.load();
             profil.getScene().setRoot(root);
@@ -282,10 +289,60 @@ public class espaceUserController implements Initializable {
             Logger.getLogger(espaceUserController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-                   
+
+    @FXML
+    public void logout() {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Message");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to logout?");
+        Optional<ButtonType> option = alert.showAndWait();
+        try {
+            if (option.get().equals(ButtonType.OK)) {
+                session.setId(0);
+                logout.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
                 
-    
-          
-    
+                
+
+                root.setOnMousePressed((MouseEvent event) -> {
+                    double x = event.getSceneX();
+                    double y = event.getSceneY();
+                });
+
+                root.setOnMouseDragged((MouseEvent event) -> {
+                    double x = 0;
+                    stage.setX(event.getScreenX() - x);
+                    double y = 0;
+                    stage.setY(event.getScreenY() - y);
+
+                    stage.setOpacity(.8);
+                });
+
+                root.setOnMouseReleased((MouseEvent event) -> {
+                    stage.setOpacity(1);
+                });
+
+                stage.initStyle(StageStyle.TRANSPARENT);
+
+                stage.setScene(scene);
+                stage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void GoToHome(ActionEvent event) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/HomePagewadha7.fxml"));
+
+            Parent root = loader.load();
+            home.getScene().setRoot(root);
+    }
 
 }

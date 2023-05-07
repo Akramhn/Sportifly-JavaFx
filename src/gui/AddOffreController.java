@@ -110,6 +110,7 @@ public class AddOffreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            System.out.println(session.getId());
             Connection cnx = MyDB.getInstance().getCnx();
             String query = "SELECT nom FROM categorie_activite";
             PreparedStatement pst = cnx.prepareStatement(query);
@@ -120,6 +121,7 @@ public class AddOffreController implements Initializable {
             }
             pst.close();
             rs.close();
+            
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }

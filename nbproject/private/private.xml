@@ -3,32 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/StaticOffreByCatController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/espaceUser.fxml</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ActiviteController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/AdmincategController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/AdminController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/services/ActiviterService.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/espaceUserController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/TemplateActiviteController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ListOffreUserController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/AdminActiviteController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/CalendarActiviteController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ListOffreController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/login.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/CoachReservationController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ActiviteEditController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/signInFXMLController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ListActController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ActiviteEditFrontController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/AddActivite_FrontController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/services/CategorieService.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/CoachOffresController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/util/SessionManager.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ListReservationController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/signupFXMLController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/AddOffreController.java</file>
-            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/SPROTFILYJAVAFX-gestionusers/src/gui/ActiviteFrontController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/util/Constants.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/AddOffreController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/ShowAllControllerBackPart.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/HomePageController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/AjoutController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/AdminController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/firstwindow.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/ShowAllController.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/ShowAllControllerFrontEvent.java</file>
+            <file>file:/C:/Users/wadah/OneDrive/Desktop/pidev/IntegrationJavaFX/Sportifly/src/gui/Model.fxml</file>
         </group>
     </open-files>
 </project-private>

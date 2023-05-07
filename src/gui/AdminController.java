@@ -97,8 +97,6 @@ import javax.xml.stream.*;
 public class AdminController implements Initializable {
 
     @FXML
-    private Button exit;
-    @FXML
     private TextField Recherche_User;
     @FXML
     private TableView<User> tvUsers;
@@ -114,46 +112,28 @@ public class AdminController implements Initializable {
     private TableColumn<?, ?> experienceuser;
 
     @FXML
-    private TableColumn<?, ?> actions;
-    @FXML
-    private TableColumn<?, ?> bloqueretdebloquer;
-    @FXML
     private TableColumn<?, ?> diplomeuser;
     @FXML
     private Button refresh;
-    @FXML
     private Button modifier;
-      @FXML
     private Button logout;
-    @FXML
-    private Button supprimer;
   private Connection cnx;
     private Statement statement;
     private PreparedStatement prepare;
     private ResultSet result;
    int index = -1;
-     @FXML
-    private TextField ids;
 
-    @FXML
     private TextField names;
 
-    @FXML
     private TextField roless;
 
-  @FXML
     private ImageView userShowImg;
- @FXML
     private TextField emails;
- @FXML
     private TextField etats;
-  @FXML
     private TextField experiences;
   
   @FXML
 private TableColumn<User, String> imageuser;
-      @FXML
-    private TableColumn<User, Boolean> blockColumn;
           @FXML
     private TableColumn<?, ?> is_blocked;
 
@@ -166,8 +146,6 @@ private User selectedUser;
     private Button excelbtn;
    
   static User user;
-    @FXML
-    private TextField teluser;
   @FXML
     private Button capbtn;
   @FXML
@@ -175,6 +153,24 @@ private User selectedUser;
  private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button MesressA;
+    @FXML
+    private Button MesOffA;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button evente;
+    @FXML
+    private Button part;
 
   
  @Override
@@ -237,9 +233,6 @@ public void initialize(URL url, ResourceBundle rb) {
     
 }
 
-    @FXML
-    private void showSelectedUser(MouseEvent event) {
-}
  @FXML
     public void getSelected(MouseEvent event) throws SQLException {
         index = tvUsers.getSelectionModel().getSelectedIndex();
@@ -257,7 +250,6 @@ public void initialize(URL url, ResourceBundle rb) {
         System.out.println(imageuser.getCellData(index).toString());    
     }
    
-   @FXML
   public  ObservableList<User> getUserList() {
          cnx = MyDB.getInstance().getCnx();
         
@@ -281,7 +273,6 @@ user = new User(rs.getInt("id"), rs.getString("email"), rs.getString("roles"), r
     }
 
 
-           @FXML
      private void refresh(){
     ObservableList<User> list = getUserList();
     emailUser.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -462,7 +453,6 @@ tvUsers.getColumns().addAll(colBtn);
    
    
    
-    @FXML
     void showSelectedEvent(MouseEvent event) throws SQLException {
         User e = tvUsers.getSelectionModel().getSelectedItem();
         if (e != null) {
@@ -490,8 +480,7 @@ tvUsers.getColumns().addAll(colBtn);
     }
     
     
-     @FXML
-    void search_user() {
+     void search_user() {
 
          emailUser.setCellValueFactory(new PropertyValueFactory<>("email"));
              roleuser.setCellValueFactory(new PropertyValueFactory<>("roles"));
@@ -532,7 +521,6 @@ tvUsers.getColumns().addAll(colBtn);
     }
       private double x = 0;
     private double y = 0;
-     @FXML
     public void logout() {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -599,8 +587,7 @@ JasperDesign jDesign = JRXmlLoader.load("C:\\Users\\user\\Documents\\NetBeansPro
         }
     }
 */
-     @FXML
-    void genererPDF(MouseEvent event) {
+     void genererPDF(MouseEvent event) {
         // Afficher la boîte de dialogue de sélection de fichier
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Enregistrer le fichier PDF");
@@ -758,8 +745,7 @@ JasperDesign jDesign = JRXmlLoader.load("C:\\Users\\user\\Documents\\NetBeansPro
 
     
     }
-  @FXML
-void statuser(MouseEvent event) {
+  void statuser(MouseEvent event) {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("statuser.fxml"));
     Parent root = null;
     try {
@@ -795,7 +781,6 @@ UserService user =new UserService();
 
 
 
-@FXML
 public  void capturer(Node node) {
         // Récupération de la scène contenant le nœud à capturer
         Scene scene = node.getScene();
@@ -871,6 +856,84 @@ String text = user.getEmail() + "," + user.getRoles() + "," + user.getLastname()
         alert.showAndWait();
         }
     }
+
+   @FXML
+    private void handleClicks(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton.getId().equals("MesOffA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOffreBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesOffA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("utilisateur")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) utilisateur.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("plan")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminActivite.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) plan.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("cat")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admi_categ.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) cat.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("act")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Act.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) act.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("comm")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Com.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) comm.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("MesressA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListResBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesressA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (clickedButton.getId().equals("evente")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+             else if (clickedButton.getId().equals("part")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
 
  
 

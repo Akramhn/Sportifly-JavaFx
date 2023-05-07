@@ -66,7 +66,7 @@ public class AdminActiviteController implements Initializable {
 
     @FXML
     private TextField Recherche_User;
-     @FXML
+    @FXML
     private TableView<Activiter> Vactivite;
 
     @FXML
@@ -89,12 +89,28 @@ public class AdminActiviteController implements Initializable {
     private Button add_activite;
     @FXML
     private Button qrcode;
-     private final ObservableList<Activiter> eventList = FXCollections.observableArrayList();
+    private final ObservableList<Activiter> eventList = FXCollections.observableArrayList();
     ActiviterService ps = new ActiviterService();
-    @FXML
     private Button dashcateg;
-    @FXML
     private Button stat;
+    @FXML
+    private Button MesOffA;
+    @FXML
+    private Button MesressA;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button evente;
+    @FXML
+    private Button part;
 
     /**
      * Initializes the controller class.
@@ -116,14 +132,13 @@ public class AdminActiviteController implements Initializable {
             this.deleteactivite();
             this.editactivite();
             this.pdf();
-           
 
         } catch (SQLException ex) {
             Logger.getLogger(DisplayactiviteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
 
-   @FXML
+    @FXML
     private void GoToAddActivite(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/activite.fxml"));
         ActiviteController aec = loader.getController();
@@ -131,9 +146,7 @@ public class AdminActiviteController implements Initializable {
         add_activite.getScene().setRoot(root);
 
     }
-    
-    
-    @FXML
+
     private void GoTodashcateg(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Admi_categ.fxml"));
         ActiviteController aec = loader.getController();
@@ -152,43 +165,42 @@ public class AdminActiviteController implements Initializable {
 
     }
      */
-   public void deleteactivite() {
-    delete.setCellFactory((param) -> {
-        return new TableCell() {
-            @Override
-            protected void updateItem(Object item, boolean empty) {
-                setGraphic(null);
-                if (!empty) {
-                    Button b = new Button("delete");
-                    b.setLayoutX(14.0);
-                    b.setLayoutY(14.0);
-                    b.setPrefWidth(108.0);
-                    b.setPrefHeight(35.0);
-                    b.setTextFill(Color.WHITE);
-                    b.setStyle("-fx-background-color:  #2a2185; -fx-background-radius: 20;");
-                    b.setOnAction((event) -> {
-                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                        alert.setTitle("Confirmation");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Are you sure you want to delete this record?");
-                        ButtonType confirmButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-                        ButtonType cancelButton = new ButtonType("No", ButtonBar.ButtonData.NO);
-                        alert.getButtonTypes().setAll(confirmButton, cancelButton);
-                        Optional<ButtonType> result = alert.showAndWait();
-                        if (result.get() == confirmButton) {
-                            if (ps.supprimer(Vactivite.getItems().get(getIndex()))) {
-                                Vactivite.getItems().remove(getIndex());
-                                Vactivite.refresh();
+    public void deleteactivite() {
+        delete.setCellFactory((param) -> {
+            return new TableCell() {
+                @Override
+                protected void updateItem(Object item, boolean empty) {
+                    setGraphic(null);
+                    if (!empty) {
+                        Button b = new Button("delete");
+                        b.setLayoutX(14.0);
+                        b.setLayoutY(14.0);
+                        b.setPrefWidth(108.0);
+                        b.setPrefHeight(35.0);
+                        b.setTextFill(Color.WHITE);
+                        b.setStyle("-fx-background-color:  #2a2185; -fx-background-radius: 20;");
+                        b.setOnAction((event) -> {
+                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                            alert.setTitle("Confirmation");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Are you sure you want to delete this record?");
+                            ButtonType confirmButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+                            ButtonType cancelButton = new ButtonType("No", ButtonBar.ButtonData.NO);
+                            alert.getButtonTypes().setAll(confirmButton, cancelButton);
+                            Optional<ButtonType> result = alert.showAndWait();
+                            if (result.get() == confirmButton) {
+                                if (ps.supprimer(Vactivite.getItems().get(getIndex()))) {
+                                    Vactivite.getItems().remove(getIndex());
+                                    Vactivite.refresh();
+                                }
                             }
-                        }
-                    });
-                    setGraphic(b);
+                        });
+                        setGraphic(b);
+                    }
                 }
-            }
-        };
-    });
-}
-
+            };
+        });
+    }
 
     public void editactivite() {
         edit.setCellFactory((param) -> {
@@ -214,12 +226,12 @@ public class AdminActiviteController implements Initializable {
                             try {
                                 root = loader.load();
 
-                                ActiviteEditController activiteController = loader.getController();
+                                ActiviteEditController activiteeditController = loader.getController();
 
-                                activiteController.setId(selectedActivite.getId());
-                                activiteController.setTitre(selectedActivite.getTitre());
-                                activiteController.setDate_deb(selectedActivite.getDate_debut().toLocalDateTime().toLocalDate());
-                                activiteController.setDate_fin(selectedActivite.getDate_fin().toLocalDateTime().toLocalDate());
+                                activiteeditController.setId(selectedActivite.getId());
+                                activiteeditController.setTitre(selectedActivite.getTitre());
+                                activiteeditController.setDate_deb(selectedActivite.getDate_debut().toLocalDateTime().toLocalDate());
+                                activiteeditController.setDate_fin(selectedActivite.getDate_fin().toLocalDateTime().toLocalDate());
 
                                 add_activite.getScene().setRoot(root);
                             } catch (IOException ex) {
@@ -299,7 +311,7 @@ public class AdminActiviteController implements Initializable {
                         b.setTextFill(Color.WHITE);
                         b.setStyle("-fx-background-color:  #2a2185; -fx-background-radius: 20;");
                         b.setOnAction((event) -> {
-                            
+
                             // Get the selected Activite object from the TableView
                             Activiter selectedActivite = (Activiter) getTableView().getItems().get(getIndex());
                             // Create a new Document
@@ -324,8 +336,6 @@ public class AdminActiviteController implements Initializable {
                                 table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER); // center the text in the table cells
 
 // Add the table headers
-                               
-
 // Add the Activite details to the table
                                 table.addCell(new PdfPCell(new Phrase("Titre:", new Font(Font.FontFamily.HELVETICA, 10))));
                                 table.addCell(new PdfPCell(new Phrase(selectedActivite.getTitre(), new Font(Font.FontFamily.HELVETICA, 10))));
@@ -337,8 +347,6 @@ public class AdminActiviteController implements Initializable {
 // Add the table to the Document
                                 document.add(table);
 
-                            
-                               
                             } catch (DocumentException ex) {
                                 Logger.getLogger(DisplayactiviteController.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -365,12 +373,81 @@ public class AdminActiviteController implements Initializable {
 
     }
 
-    @FXML
     private void gotostat(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Chart.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ChartActivite.fxml"));
         ActiviteController aec = loader.getController();
         Parent root = loader.load();
         stat.getScene().setRoot(root);
     }
-    
+
+    @FXML
+    private void handleClicks(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton.getId().equals("MesOffA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOffreBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesOffA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("utilisateur")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) utilisateur.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("plan")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminActivite.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) plan.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("cat")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admi_categ.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) cat.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("act")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Act.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) act.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("comm")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("afficher_Com.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) comm.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("MesressA")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListResBack.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) MesressA.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("evente")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } else if (clickedButton.getId().equals("part")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) evente.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
 }

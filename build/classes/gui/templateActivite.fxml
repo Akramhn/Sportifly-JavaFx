@@ -114,6 +114,9 @@
                            <font>
                               <Font name="Berlin Sans FB" size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                      <VBox.margin>
@@ -138,6 +141,9 @@
                            <font>
                               <Font name="Berlin Sans FB" size="18.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
@@ -168,15 +174,15 @@
                               <Image url="@../img/calendar.png" />
                            </image>
                            <HBox.margin>
-                              <Insets left="6.0" />
+                              <Insets left="-60.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Button fx:id="calendar" mnemonicParsing="false" onAction="#gotocalendar" prefHeight="33.0" prefWidth="140.0" style="-fx-background-color: transparent;" text="Calendar">
+                        <Button fx:id="calendar" mnemonicParsing="false" onAction="#gotocalendar" prefHeight="39.0" prefWidth="181.0" style="-fx-background-color: transparent;" text="Calendar">
                            <font>
                               <Font name="Berlin Sans FB" size="18.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="150.0" />
+                              <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -191,7 +197,7 @@
                               <Insets left="6.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="263.0" text="Historique">
+                        <Label lineSpacing="2.0" prefHeight="40.0" prefWidth="221.0" text="Historique">
                            <font>
                               <Font name="Berlin Sans FB" size="18.0" />
                            </font>

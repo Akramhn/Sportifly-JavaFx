@@ -46,6 +46,22 @@ public class CategEditController implements Initializable {
     private TextField desc;
     @FXML
     private Button btn_modif;
+    @FXML
+    private Button MesOffA;
+    @FXML
+    private Button MesressA;
+    @FXML
+    private Button utilisateur;
+    @FXML
+    private Button plan;
+    @FXML
+    private Button cat;
+    @FXML
+    private Button act;
+    @FXML
+    private Button comm;
+    @FXML
+    private Button event;
 
     public int getId() {
         return id;
@@ -120,6 +136,10 @@ alert.showAndWait();
     
     
 }
+
+    @FXML
+    private void handleClicks(ActionEvent event) {
+    }
 
    
     

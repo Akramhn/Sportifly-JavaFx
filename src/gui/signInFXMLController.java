@@ -79,6 +79,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import util.MyDB;
 import util.SessionManager;
 
+
+
 /**
  * FXML Controller class
  *
@@ -126,6 +128,8 @@ public class signInFXMLController implements Initializable {
     private int numAttempts = 0;
     private boolean disableLogin = false;
     private Timer timer;
+    
+    private SessionManager session ;
 
     @FXML
     public void login() throws IOException {
@@ -181,7 +185,7 @@ public class signInFXMLController implements Initializable {
                             if (SessionManager.getRoles().contains("Role_USER")) {
 
                                 try {
-                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/espaceUser.fxml"));
+                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/HomePagewadha7.fxml"));
 
                                     Parent root = loader.load();
                                     loginBtn.getScene().setRoot(root);
@@ -192,7 +196,7 @@ public class signInFXMLController implements Initializable {
                             } else if (SessionManager.getRoles().contains("Role_Coach")) {
 
                                 try {
-                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CoachOffres.fxml"));
+                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/HomePagewadha7.fxml"));
 
                                     Parent root = loader.load();
                                     loginBtn.getScene().setRoot(root);
@@ -335,6 +339,9 @@ public class signInFXMLController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+                        System.out.println(session.getId()+"ba3d login");
+
 
     }
 

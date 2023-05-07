@@ -72,6 +72,12 @@ public class User {
         this.password = password;
         this.lastname = lastname;
     }
+    
+   public User(int id,String lastname) {
+        this.id = id;
+        
+        this.lastname = lastname;
+    } 
 
     public User(String email, String password) {
         this.email = email;

@@ -70,7 +70,7 @@ public class ReservationService implements IServiceOffre<reservation> {
     public boolean supprimer1(reservation r) throws SQLException {
         boolean test = false;
         try {
-            String req = "DELETE FROM offre WHERE id=?";
+            String req = "DELETE FROM reservation WHERE id=?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, r.getId());
             ps.executeUpdate();
